@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<div th:each="cars : ${car}">
+    <a th:text="${cars.getColor() + ', ' + cars.getModel() + ' ' + cars.getSeries()}">Car</a>
+</div>
+
+<form th:action="@{/cars}" method="get">
+    <input type="number" name="count" placeholder="Enter count"/>
+    <button type="submit">Show Cars</button>
+</form>
+
+<br/>
+<hr/>
+
+</body>
+</html>
